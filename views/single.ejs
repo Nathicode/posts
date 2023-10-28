@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/nav.ejs') %>
+        <div class="titlepost">
+            <h1>Your Post</h1>
+        </div>
+        <div class="posts">
+
+    
+       
+        <div class="post">
+            <h2 class="about"><%= social.title %></h2>
+            <p class="detail"><%= social.post %></p>
+            <h2 class="name"><%= social.name %></h2>
+        </div>
+      
+       
+    
+</div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@ const url = 'mongodb+srv://nathi:qwer123@cluster0.16xnlht.mongodb.net/?retryWrit
 const port = process.env.PORT || 4000;
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     Post.find().sort({ createdAt: -1 })
     .then((result) => {
@@ -20,6 +20,9 @@ app.get('/', (req, res) => {
 mongoose.connect(url)
 .then((result) => {
     console.log('connected');
+    app.listen(port, () => {
+        console.log('successfully connected');
+    })
 })
 .catch((err) => {
     console.log(err);
@@ -50,7 +53,4 @@ app.get('/posts/:id', (req, res) => {
     .catch((err) => {
         console.log(err);
     })
-})
-app.listen(port, () => {
-    console.log('successfully connected');
 })
